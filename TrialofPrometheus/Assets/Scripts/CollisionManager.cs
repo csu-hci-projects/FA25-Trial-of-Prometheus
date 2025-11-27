@@ -28,7 +28,7 @@ public class CollisionManager : MonoBehaviour
         {
             EnemyCollision enemy = Enemies[j];
 
-            if (IsOverlapping(enemy, Player))
+            if (IsOverlapping(enemy.Bounds, Player.Bounds))
             {
                 Player.TakeDamage(1);
 
