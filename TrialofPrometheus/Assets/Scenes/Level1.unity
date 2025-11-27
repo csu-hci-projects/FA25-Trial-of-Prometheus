@@ -560,6 +560,14 @@ MonoBehaviour:
     count: 1
     spacing: 0
     delayBefore: 0
+  - prefab: {fileID: 1348991505047031755, guid: 966176d65ba48724791106fe4965b6c5, type: 3}
+    count: 2
+    spacing: 0
+    delayBefore: 2
+  - prefab: {fileID: 5841805532605130826, guid: 209bc686681387d4585588fdf8bca5e3, type: 3}
+    count: 2
+    spacing: 0
+    delayBefore: 2
 --- !u!4 &980050267
 Transform:
   m_ObjectHideFlags: 0

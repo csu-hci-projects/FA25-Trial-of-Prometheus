@@ -5,7 +5,7 @@ public class SwoopEnemyPixelCorrected : Enemy
     [Header("Swoop Settings")]
     public float speed = 2f;               // horizontal movement speed
     public float verticalOffset = 0.3f;    // small vertical sine arc (~10 pixels)
-    public float stopDistanceX = 0.5f;     // distance from target X to fire
+    public float stopDistanceX = 0.5f; // distance from target X to fire   
     public GameObject bulletPrefab;
 
     private Transform firePoint;
@@ -99,10 +99,14 @@ public class SwoopEnemyPixelCorrected : Enemy
         transform.position = newPos;
 
         RotateSpriteTowards(newPos - currentPos);
-
+        float camHeight = Camera.main.orthographicSize;
+        float camWidth = camHeight * Camera.main.aspect; 
         // Destroy if offscreen (roughly)
-        if (Mathf.Abs(newX) > 9f || Mathf.Abs(newY) > 5f)
+        if (newX < Camera.main.transform.position.x - camWidth/2 - 1f || 
+            newX > Camera.main.transform.position.x + camWidth/2 + 1f)
+        {
             Destroy(gameObject);
+        }
     }
 
     private void FireBullet()
