@@ -6,17 +6,26 @@ public class PlayerMover : MonoBehaviour
 
     private float minX, maxX, minY, maxY;
     private float halfWidth, halfHeight;
+    private int health;
+    private SpriteRenderer sr;
+    public Bounds Bounds => sr.bounds;
+
+    void OnEnable()
+    {
+        CollisionManager.Player = this;
+        health = 1;
+    }
     
     void Start()
     {
         Camera cam = Camera.main;
-
+        
         // Get orthographic size and aspect
         float camHeight = cam.orthographicSize * 2f;
         float camWidth = camHeight * cam.aspect;
 
         // Get player sprite size in world units
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr = GetComponent<SpriteRenderer>();
         if (sr != null)
         {
             halfWidth = sr.bounds.extents.x;
@@ -48,6 +57,15 @@ public class PlayerMover : MonoBehaviour
     void FixedUpdate()
     {
         // Move the player by setting the Rigidbody2D's position
-        
+
+    }
+    
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
