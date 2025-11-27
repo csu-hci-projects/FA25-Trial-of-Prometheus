@@ -7,6 +7,11 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected int damageToPlayer = 1;
 
     protected int currentHealth;
+    void Awake()
+{
+   // if (transform.rotation == Quaternion.identity)
+       // transform.Rotate(0, 0, 90);
+}
 
     protected virtual void Start()
     {
