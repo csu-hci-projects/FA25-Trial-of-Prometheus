@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("General")]
     public SpawnMode mode = SpawnMode.Periodic;
     public bool startOnAwake = true;
-    public bool loop = true;
+    [SerializeField] bool loop = true;
 
     [Header("Spawn Area")]
     public float spawnXOffset = 1f; // how far off the right edge to spawn
