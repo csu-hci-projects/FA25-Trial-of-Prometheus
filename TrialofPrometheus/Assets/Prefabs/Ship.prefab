@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4643772741105696417}
   - component: {fileID: 1480195356307900703}
   - component: {fileID: 9134061019371919079}
-  - component: {fileID: 8406253989994284673}
+  - component: {fileID: 7564867878407392255}
+  - component: {fileID: 7221699913996927514}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -157,9 +158,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.07153767, y: 0.0072509423}
+  m_Offset: {x: -0.068021744, y: -0.017875127}
   m_SpriteTilingProperty:
-    border: {x: 0.02, y: 0.04, z: 0.17, w: 0.049999997}
+    border: {x: 0, y: 0.04, z: 0.17, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.32}
     newSize: {x: 0.64, y: 0.32}
@@ -167,9 +168,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.44419062, y: 0.20530312}
+  m_Size: {x: 0.5039565, y: 0.21581544}
   m_EdgeRadius: 0
---- !u!50 &8406253989994284673
+--- !u!50 &7564867878407392255
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -196,3 +197,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7221699913996927514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8155330917658588795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df346bfdc7b577b489eac81952636e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 3

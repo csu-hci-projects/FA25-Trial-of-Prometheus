@@ -1,23 +1,12 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ShotMover : MonoBehaviour
 {
     [SerializeField] float speed = 6.0f;
     public float lifetime = 5f; // fallback lifetime in seconds
-
+   
     private float rightBound, halfHeight, halfWidth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private SpriteRenderer sr;
-    public Bounds Bounds => sr.bounds; // Expose bounds for collision check
-
-    private void Awake()
-    {
-        sr = GetComponent<SpriteRenderer>();
-    }
-
-    private void OnEnable()  => CollisionManager.Shots.Add(this);
-    private void OnDisable() => CollisionManager.Shots.Remove(this);
     void Start()
     {
         Camera cam = Camera.main;
@@ -27,6 +16,7 @@ public class ShotMover : MonoBehaviour
         float camWidth = camHeight * cam.aspect;
 
         // Get player sprite size in world units
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null)
         {
             halfWidth = sr.bounds.extents.x;
@@ -49,10 +39,5 @@ public class ShotMover : MonoBehaviour
             Destroy(gameObject);
 
         }
-    }
-    public void DestroyShot()
-    {
-        CollisionManager.Shots.Remove(this);
-        Destroy(gameObject);
     }
 }

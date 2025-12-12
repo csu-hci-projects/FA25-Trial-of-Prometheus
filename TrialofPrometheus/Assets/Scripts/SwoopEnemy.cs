@@ -16,7 +16,8 @@ public class SwoopEnemyPixelCorrected : Enemy
 
     private bool hasFired = false;
     private bool isLeaving = false;
-
+    SoundPlayer soundManager;
+    
     protected override void Start()
     {
         base.Start();
@@ -69,9 +70,17 @@ public class SwoopEnemyPixelCorrected : Enemy
                      + Mathf.Sin(progress * Mathf.PI) * verticalOffset;
 
         Vector2 newPos = new Vector2(newX, newY);
+        Vector2 direction = newPos - (Vector2)transform.position;
         transform.position = newPos;
 
-        RotateSpriteTowards(newPos - currentPos);
+       
+        if (direction.sqrMagnitude > 0.0001f)
+        {
+            // Rotate to face movement direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle -= 90f;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
 
         // Fire when close enough
         if (!hasFired && Mathf.Abs(newX - targetPos.x) <= stopDistanceX)
@@ -96,9 +105,17 @@ public class SwoopEnemyPixelCorrected : Enemy
         float newY = startPos.y + Mathf.Sin(progress * Mathf.PI) * (verticalOffset * 0.5f);
 
         Vector2 newPos = new Vector2(newX, newY);
+        Vector2 direction = newPos - (Vector2)transform.position;
         transform.position = newPos;
 
-        RotateSpriteTowards(newPos - currentPos);
+        
+        if (direction.sqrMagnitude > 0.0001f)
+        {
+            // Rotate to face movement direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle -= 90f;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
         float camHeight = Camera.main.orthographicSize;
         float camWidth = camHeight * Camera.main.aspect; 
         // Destroy if offscreen (roughly)
@@ -116,7 +133,7 @@ public class SwoopEnemyPixelCorrected : Enemy
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
     }
-
+/*
     private void RotateSpriteTowards(Vector2 dir)
     {
         if (dir.sqrMagnitude < 0.0001f) return;
@@ -124,5 +141,6 @@ public class SwoopEnemyPixelCorrected : Enemy
         angle -= 90f; // sprite points up
         spriteTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
+    */
 }
 

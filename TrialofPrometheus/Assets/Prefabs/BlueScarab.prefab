@@ -147,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5841805532605130826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18dcac988e183fe4192e871b51408911, type: 3}
+  m_Script: {fileID: 11500000, guid: 70f58b46366b8cd4fb5d4490c78210a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwoopEnemy
   maxHealth: 2
@@ -155,4 +155,4 @@ MonoBehaviour:
   speed: 2.5
   verticalOffset: 0.4
   stopDistanceX: 1.25
-  bulletPrefab: {fileID: 2979750956809782631, guid: d200fbf3d833e8a4ca153308a0018af9, type: 3}
+  bulletPrefab: {fileID: 2979750956809782631, guid: 1884075303e3be143b93666fc7581d45, type: 3}

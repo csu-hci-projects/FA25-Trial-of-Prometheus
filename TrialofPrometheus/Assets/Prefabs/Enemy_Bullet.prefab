@@ -101,7 +101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2979750956809782631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea966c03b99be3441a88fae8cf018736, type: 3}
+  m_Script: {fileID: 11500000, guid: d71b1133a28651f4f95e929cedfea7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShotTargeted
   damageToPlayer: 1
